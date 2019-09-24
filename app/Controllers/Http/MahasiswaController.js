@@ -37,7 +37,13 @@ class MahasiswaController {
 
     await data_mahasiswa.save()
 
-    return response.status(200).json(data_mahasiswa)
+    let data_response = {
+      "data" : data_mahasiswa,
+      "message": "Data berhasil diupdate",
+      "code": 200
+    }
+
+    return response.status(200).json(data_response)
   }
 
   async delete({params, response}) {
